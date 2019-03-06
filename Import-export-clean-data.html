@@ -12438,7 +12438,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Import csv data Life_Expectancy_Data.csv</span>
@@ -12446,6 +12446,7 @@ div#notebook {
 <span class="n">Life_Expectancy_Data_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">Life_Expectancy_Data_csv</span><span class="p">)</span>
 <span class="c1">#Loc 2015 data</span>
 <span class="n">Life_Expectancy_Data_df_2015</span> <span class="o">=</span> <span class="n">Life_Expectancy_Data_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">Life_Expectancy_Data_df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2015</span><span class="p">]</span>
+<span class="n">Life_Expectancy_Data_df_2015</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Life expectancy &#39;</span><span class="p">:</span><span class="s1">&#39;Life_expectancy&#39;</span><span class="p">,</span><span class="s1">&#39;Adult Mortality&#39;</span><span class="p">:</span><span class="s1">&#39;Adult_Mortality&#39;</span><span class="p">,</span><span class="s1">&#39;infant deaths&#39;</span><span class="p">:</span><span class="s1">&#39;infant_deaths&#39;</span><span class="p">,</span><span class="s1">&#39;percentage expenditure&#39;</span><span class="p">:</span><span class="s1">&#39;percentage_expenditure&#39;</span><span class="p">,</span><span class="s1">&#39;Hepatitis B&#39;</span><span class="p">:</span><span class="s1">&#39;Hepatitis_B&#39;</span><span class="p">,</span><span class="s1">&#39;under-five deaths &#39;</span><span class="p">:</span><span class="s1">&#39;under_five_deaths&#39;</span><span class="p">,</span><span class="s1">&#39;Total expenditure&#39;</span><span class="p">:</span><span class="s1">&#39;Total_expenditure&#39;</span><span class="p">,</span><span class="s1">&#39; HIV/AIDS&#39;</span><span class="p">:</span><span class="s1">&#39;HIV_AIDS&#39;</span><span class="p">,</span><span class="s1">&#39; thinness  1-19 years&#39;</span><span class="p">:</span><span class="s1">&#39; thinness_1_19_years&#39;</span><span class="p">,</span><span class="s1">&#39; thinness 5-9 years&#39;</span><span class="p">:</span><span class="s1">&#39;thinness_5_9_years&#39;</span><span class="p">,</span><span class="s1">&#39;Income composition of resources&#39;</span><span class="p">:</span><span class="s1">&#39;Income&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">Life_Expectancy_Data_df_2015</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -12459,7 +12460,22 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/anaconda3/lib/python3.6/site-packages/pandas/core/frame.py:3781: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  return super(DataFrame, self).rename(**kwargs)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -12485,23 +12501,23 @@ div#notebook {
       <th>Country</th>
       <th>Year</th>
       <th>Status</th>
-      <th>Life expectancy</th>
-      <th>Adult Mortality</th>
-      <th>infant deaths</th>
+      <th>Life_expectancy</th>
+      <th>Adult_Mortality</th>
+      <th>infant_deaths</th>
       <th>Alcohol</th>
-      <th>percentage expenditure</th>
-      <th>Hepatitis B</th>
+      <th>percentage_expenditure</th>
+      <th>Hepatitis_B</th>
       <th>Measles</th>
       <th>...</th>
       <th>Polio</th>
-      <th>Total expenditure</th>
+      <th>Total_expenditure</th>
       <th>Diphtheria</th>
-      <th>HIV/AIDS</th>
+      <th>HIV_AIDS</th>
       <th>GDP</th>
       <th>Population</th>
-      <th>thinness  1-19 years</th>
-      <th>thinness 5-9 years</th>
-      <th>Income composition of resources</th>
+      <th>thinness_1_19_years</th>
+      <th>thinness_5_9_years</th>
+      <th>Income</th>
       <th>Schooling</th>
     </tr>
   </thead>
@@ -12697,14 +12713,14 @@ div#notebook {
       <th>Government_Trust_2015</th>
       <th>...</th>
       <th>Polio</th>
-      <th>Total expenditure</th>
+      <th>Total_expenditure</th>
       <th>Diphtheria</th>
-      <th>HIV/AIDS</th>
+      <th>HIV_AIDS</th>
       <th>GDP</th>
       <th>Population</th>
-      <th>thinness  1-19 years</th>
-      <th>thinness 5-9 years</th>
-      <th>Income composition of resources</th>
+      <th>thinness_1_19_years</th>
+      <th>thinness_5_9_years</th>
+      <th>Income</th>
       <th>Schooling</th>
     </tr>
   </thead>
@@ -12843,7 +12859,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Import csv data Average_usual_weekly_hours_worked_on_the_main_job.csv</span>
@@ -12851,6 +12867,7 @@ div#notebook {
 <span class="n">weekly_hours_avg_worked_job_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">weekly_hours_avg_worked_job_csv</span><span class="p">)</span>
 <span class="n">weekly_hours_avg_worked_job_df_2015_2016_2017_df</span> <span class="o">=</span> <span class="n">weekly_hours_avg_worked_job_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">weekly_hours_avg_worked_job_df</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2015</span><span class="p">]</span>
 <span class="n">weekly_hours_avg_worked_job_df_2015_2016_2017_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;SEX&#39;</span><span class="p">,</span> <span class="s1">&#39;AGE&#39;</span><span class="p">,</span> <span class="s1">&#39;EMPSTAT&#39;</span><span class="p">,</span> <span class="s1">&#39;JOBTYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;FREQUENCY&#39;</span><span class="p">,</span><span class="s1">&#39;Time&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">weekly_hours_avg_worked_job_df_2015_2016_2017_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Employment status&#39;</span><span class="p">:</span><span class="s1">&#39;Employment_status&#39;</span><span class="p">,</span><span class="s1">&#39;Job type&#39;</span><span class="p">:</span><span class="s1">&#39;Job_type&#39;</span><span class="p">,</span><span class="s1">&#39;Unit Code&#39;</span><span class="p">:</span><span class="s1">&#39;Unit_Code&#39;</span><span class="p">,</span><span class="s1">&#39;PowerCode Code&#39;</span><span class="p">:</span><span class="s1">&#39;PowerCode_Code&#39;</span><span class="p">,</span><span class="s1">&#39;Reference Period Code&#39;</span><span class="p">:</span><span class="s1">&#39;Reference_Period_Code&#39;</span><span class="p">,</span><span class="s1">&#39;Reference Period&#39;</span><span class="p">:</span><span class="s1">&#39;Reference_Period&#39;</span><span class="p">,</span><span class="s1">&#39;Flag Codes&#39;</span><span class="p">:</span><span class="s1">&#39;Flag_Codes&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">weekly_hours_avg_worked_job_df_2015_2016_2017_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -12873,13 +12890,18 @@ A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
   errors=errors)
+/anaconda3/lib/python3.6/site-packages/pandas/core/frame.py:3781: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  return super(DataFrame, self).rename(**kwargs)
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[8]:</div>
+<div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -12905,18 +12927,18 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <th>Country</th>
       <th>Sex</th>
       <th>Age</th>
-      <th>Employment status</th>
-      <th>Job type</th>
+      <th>Employment_status</th>
+      <th>Job_type</th>
       <th>Frequency</th>
       <th>TIME</th>
-      <th>Unit Code</th>
+      <th>Unit_Code</th>
       <th>Unit</th>
-      <th>PowerCode Code</th>
+      <th>PowerCode_Code</th>
       <th>PowerCode</th>
-      <th>Reference Period Code</th>
-      <th>Reference Period</th>
+      <th>Reference_Period_Code</th>
+      <th>Reference_Period</th>
       <th>Value</th>
-      <th>Flag Codes</th>
+      <th>Flag_Codes</th>
       <th>Flags</th>
     </tr>
   </thead>
@@ -13091,18 +13113,18 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
       <th>Country</th>
       <th>Sex</th>
       <th>Age</th>
-      <th>Employment status</th>
-      <th>Job type</th>
+      <th>Employment_status</th>
+      <th>Job_type</th>
       <th>Frequency</th>
       <th>TIME</th>
-      <th>Unit Code</th>
+      <th>Unit_Code</th>
       <th>Unit</th>
-      <th>PowerCode Code</th>
+      <th>PowerCode_Code</th>
       <th>PowerCode</th>
-      <th>Reference Period Code</th>
-      <th>Reference Period</th>
+      <th>Reference_Period_Code</th>
+      <th>Reference_Period</th>
       <th>Value</th>
-      <th>Flag Codes</th>
+      <th>Flag_Codes</th>
       <th>Flags</th>
     </tr>
   </thead>
@@ -13285,7 +13307,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x10f7bc908&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x10917a908&gt;]</pre>
 </div>
 
 </div>
@@ -13504,7 +13526,7 @@ MSE: 0.2432509108227564, R2: 0.7754060034339628
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Logistic Regression</span>
@@ -13540,7 +13562,22 @@ MSE: 0.2432509108227564, R2: 0.7754060034339628
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[49]:</div>
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/anaconda3/lib/python3.6/site-packages/pandas/core/frame.py:3781: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  return super(DataFrame, self).rename(**kwargs)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -13614,7 +13651,7 @@ MSE: 0.2432509108227564, R2: 0.7754060034339628
       <td>0.94143</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>6</th>
       <td>1</td>
       <td>41.368645</td>
       <td>7.587</td>
@@ -13636,7 +13673,7 @@ MSE: 0.2432509108227564, R2: 0.7754060034339628
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#print(X.shape, y.shape)</span>
@@ -13651,7 +13688,7 @@ MSE: 0.2432509108227564, R2: 0.7754060034339628
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LogisticRegression</span>
@@ -13692,13 +13729,13 @@ Testing Data Score: 1.0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[51]:</div>
+<div class="prompt output_prompt">Out[18]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.collections.PathCollection at 0x1a21f02a20&gt;</pre>
+<pre>&lt;matplotlib.collections.PathCollection at 0x1a1bd03390&gt;</pre>
 </div>
 
 </div>
@@ -13724,7 +13761,7 @@ Testing Data Score: 1.0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -13741,7 +13778,7 @@ Testing Data Score: 1.0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[52]:</div>
+<div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -13770,27 +13807,27 @@ Testing Data Score: 1.0
   </thead>
   <tbody>
     <tr>
-      <th>2202</th>
+      <th>3300</th>
       <td>1</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>2249</th>
+      <th>3369</th>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>3239</th>
+      <th>4848</th>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>2318</th>
+      <th>3472</th>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>749</th>
+      <th>1123</th>
       <td>1</td>
       <td>1</td>
     </tr>
@@ -13807,12 +13844,12 @@ Testing Data Score: 1.0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#KNN</span>
 <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="k">import</span> <span class="n">KNeighborsClassifier</span>
-<span class="n">target</span> <span class="o">=</span> <span class="n">weekly_hours_avg_worked_job_df_2015_2016_2017_df_new</span><span class="p">[</span><span class="s2">&quot;Job_type&quot;</span><span class="p">]</span>
+<span class="n">target</span> <span class="o">=</span> <span class="n">weekly_hours_avg_worked_job_World_Happiness_df_new</span><span class="p">[</span><span class="s2">&quot;Job_type&quot;</span><span class="p">]</span>
 <span class="n">target_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;negative&quot;</span><span class="p">,</span> <span class="s2">&quot;positive&quot;</span><span class="p">]</span>
 </pre></div>
 
@@ -13823,7 +13860,7 @@ Testing Data Score: 1.0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">weekly_hours_avg_worked_job_World_Happiness_df_new</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Job_type&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -13841,7 +13878,7 @@ Testing Data Score: 1.0
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[61]:</div>
+<div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -13874,7 +13911,7 @@ Testing Data Score: 1.0
   </thead>
   <tbody>
     <tr>
-      <th>4178</th>
+      <th>6233</th>
       <td>18.441828</td>
       <td>4.642</td>
       <td>0.92049</td>
@@ -13883,7 +13920,7 @@ Testing Data Score: 1.0
       <td>0.27688</td>
     </tr>
     <tr>
-      <th>4179</th>
+      <th>6236</th>
       <td>44.421483</td>
       <td>4.642</td>
       <td>0.92049</td>
@@ -13892,7 +13929,7 @@ Testing Data Score: 1.0
       <td>0.27688</td>
     </tr>
     <tr>
-      <th>4180</th>
+      <th>6237</th>
       <td>44.455706</td>
       <td>4.642</td>
       <td>0.92049</td>
@@ -13901,7 +13938,7 @@ Testing Data Score: 1.0
       <td>0.27688</td>
     </tr>
     <tr>
-      <th>4181</th>
+      <th>6238</th>
       <td>18.060420</td>
       <td>4.642</td>
       <td>0.92049</td>
@@ -13910,7 +13947,7 @@ Testing Data Score: 1.0
       <td>0.27688</td>
     </tr>
     <tr>
-      <th>4182</th>
+      <th>6239</th>
       <td>18.249458</td>
       <td>4.642</td>
       <td>0.92049</td>
@@ -13931,10 +13968,10 @@ Testing Data Score: 1.0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#from sklearn.model_selection import train_test_split</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 
@@ -13942,55 +13979,10 @@ Testing Data Score: 1.0
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-59-10f274b2029f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">from</span> sklearn<span class="ansi-blue-fg">.</span>model_selection <span class="ansi-green-fg">import</span> train_test_split
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>X_train<span class="ansi-blue-fg">,</span> X_test<span class="ansi-blue-fg">,</span> y_train<span class="ansi-blue-fg">,</span> y_test <span class="ansi-blue-fg">=</span> train_test_split<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">,</span> target<span class="ansi-blue-fg">,</span> random_state<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">42</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/anaconda3/lib/python3.6/site-packages/sklearn/model_selection/_split.py</span> in <span class="ansi-cyan-fg">train_test_split</span><span class="ansi-blue-fg">(*arrays, **options)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2029</span>         test_size <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">0.25</span>
-<span class="ansi-green-intense-fg ansi-bold">   2030</span> 
-<span class="ansi-green-fg">-&gt; 2031</span><span class="ansi-red-fg">     </span>arrays <span class="ansi-blue-fg">=</span> indexable<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>arrays<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2032</span> 
-<span class="ansi-green-intense-fg ansi-bold">   2033</span>     <span class="ansi-green-fg">if</span> shuffle <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">False</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/anaconda3/lib/python3.6/site-packages/sklearn/utils/validation.py</span> in <span class="ansi-cyan-fg">indexable</span><span class="ansi-blue-fg">(*iterables)</span>
-<span class="ansi-green-intense-fg ansi-bold">    227</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    228</span>             result<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>np<span class="ansi-blue-fg">.</span>array<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 229</span><span class="ansi-red-fg">     </span>check_consistent_length<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>result<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    230</span>     <span class="ansi-green-fg">return</span> result
-<span class="ansi-green-intense-fg ansi-bold">    231</span> 
-
-<span class="ansi-green-fg">/anaconda3/lib/python3.6/site-packages/sklearn/utils/validation.py</span> in <span class="ansi-cyan-fg">check_consistent_length</span><span class="ansi-blue-fg">(*arrays)</span>
-<span class="ansi-green-intense-fg ansi-bold">    202</span>     <span class="ansi-green-fg">if</span> len<span class="ansi-blue-fg">(</span>uniques<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    203</span>         raise ValueError(&#34;Found input variables with inconsistent numbers of&#34;
-<span class="ansi-green-fg">--&gt; 204</span><span class="ansi-red-fg">                          &#34; samples: %r&#34; % [int(l) for l in lengths])
-</span><span class="ansi-green-intense-fg ansi-bold">    205</span> 
-<span class="ansi-green-intense-fg ansi-bold">    206</span> 
-
-<span class="ansi-red-fg">ValueError</span>: Found input variables with inconsistent numbers of samples: [4105, 4479]</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Loop through different k values to see which has the highest accuracy</span>
@@ -14056,6 +14048,19 @@ k: 19, Train/Test Score: 1.000/1.000
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#ipython nbconvert --to html Import-export-clean-data.ipynb</span>
+</pre></div>
+
+</div>
 </div>
 </div>
 
