@@ -73,6 +73,47 @@ def index():
 
     return render_template("index.html", cities=dist_city_list)
 
+@app.route("/visualization")
+def index2():
+    """Visualization Page."""
+    
+    # dist_city_sql = (f'SELECT DISTINCT city FROM station ')
+    # dist_city = pd.read_sql(dist_city_sql, engine2.connect())
+    # dist_city_list = dist_city["city"].values.tolist()
+    dist_city_list = 'hello'
+    # results = session.query(Station.city).distinct()
+    # cities = [result[0] for result in results]
+
+    return render_template("index2.html", cities=dist_city_list)
+
+
+@app.route("/pandas")
+def index_pandas():
+    """Data Cleaning and Wrangling Page."""
+    
+    # dist_city_sql = (f'SELECT DISTINCT city FROM station ')
+    # dist_city = pd.read_sql(dist_city_sql, engine2.connect())
+    # dist_city_list = dist_city["city"].values.tolist()
+    dist_city_list = 'hello'
+    # results = session.query(Station.city).distinct()
+    # cities = [result[0] for result in results]
+
+    return render_template("Import-export-clean-data.html", cities=dist_city_list)
+
+
+@app.route("/httpcats")
+def index_HttpCats():
+    """Http Cats Page."""
+    
+    # dist_city_sql = (f'SELECT DISTINCT city FROM station ')
+    # dist_city = pd.read_sql(dist_city_sql, engine2.connect())
+    # dist_city_list = dist_city["city"].values.tolist()
+    dist_city_list = 'hello'
+    # results = session.query(Station.city).distinct()
+    # cities = [result[0] for result in results]
+
+    return render_template("cats_index.html", cities=dist_city_list)
+
 # @app.route("/names")
 # def names():
 #     """Return a list of sample names."""
