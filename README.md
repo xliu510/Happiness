@@ -1,9 +1,9 @@
 # Project Happiness
 
-Github Page <br>
+##### Github Page
 https://xliu510.github.io/Happiness/index.html
 
-Heroku App <br>
+##### Heroku App
 https://world-happiness-inc.herokuapp.com/
 
 ## Project Description
