@@ -114,6 +114,19 @@ def index_HttpCats():
 
     return render_template("cats_index.html", cities=dist_city_list)
 
+@app.route("/sandy_graph")
+def index_sandyGraph():
+    """Http Sandy's Graph Page."""
+    
+    # dist_city_sql = (f'SELECT DISTINCT city FROM station ')
+    # dist_city = pd.read_sql(dist_city_sql, engine2.connect())
+    # dist_city_list = dist_city["city"].values.tolist()
+    # dist_city_list = 'hello'
+    # results = session.query(Station.city).distinct()
+    # cities = [result[0] for result in results]
+
+    return render_template("graph.html")
+
 # @app.route("/names")
 # def names():
 #     """Return a list of sample names."""
@@ -361,7 +374,44 @@ def happiness_region():
     #return as json object
     return jsonify(happiness)
 
+@app.route("/barplot/<feature>")
+def graph_barplot(feature):
 
+    selected_feature = None
+
+    if feature == 'adultmortality':
+        selected_feature = 'adult_mortality'
+    elif feature == 'lifeexpectancy':
+        selected_feature = 'life_expectancy'
+    elif feature == 'gdp':
+        selected_feature = 'gdp_per_capita_2015'
+    elif feature == 'family':
+        selected_feature = 'family_2015'
+    elif feature == 'health':
+        selected_feature = 'health_2015'
+    elif feature == 'freedom':
+        selected_feature = 'freedom_2015'
+    elif feature == 'income':
+        selected_feature = 'income'
+  
+
+
+    #select query
+    happiness_region_select = ('SELECT country, happiness_score_2015 '
+                           f', {selected_feature} as Second_Feature '
+                            'FROM World_Happiness_Life_Expectancy_tb '
+                            'ORDER BY happiness_score_2015 DESC LIMIT 50')
+
+    #read query into dataframe
+    happiness_region_df = pd.read_sql(happiness_region_select, engine2.connect())
+    
+    #convert dataframe to dictionary
+    happiness_region_dict = happiness_region_df.to_dict('records')
+
+    #return as json object
+    return jsonify(happiness_region_dict)
+    
+    
 
 
 
