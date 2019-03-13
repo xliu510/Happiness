@@ -71,7 +71,7 @@ def index():
     # results = session.query(Station.city).distinct()
     # cities = [result[0] for result in results]
 
-    return render_template("index.html", cities=dist_city_list)
+    return render_template("index.html")
 
 @app.route("/visualization")
 def index2():
@@ -84,7 +84,7 @@ def index2():
     # results = session.query(Station.city).distinct()
     # cities = [result[0] for result in results]
 
-    return render_template("index2.html", cities=dist_city_list)
+    return render_template("index2.html")
 
 
 @app.route("/pandas")
@@ -98,7 +98,7 @@ def index_pandas():
     # results = session.query(Station.city).distinct()
     # cities = [result[0] for result in results]
 
-    return render_template("Import-export-clean-data.html", cities=dist_city_list)
+    return render_template("Import-export-clean-data.html")
 
 
 @app.route("/httpcats")
@@ -112,7 +112,7 @@ def index_HttpCats():
     # results = session.query(Station.city).distinct()
     # cities = [result[0] for result in results]
 
-    return render_template("cats_index.html", cities=dist_city_list)
+    return render_template("cats_index.html")
 
 @app.route("/sandy_graph")
 def index_sandyGraph():
@@ -127,169 +127,10 @@ def index_sandyGraph():
 
     return render_template("graph.html")
 
-# @app.route("/names")
-# def names():
-#     """Return a list of sample names."""
-
-#     year_extract = '201'
-#     avg_sql = (f'SELECT city, substr(start_date, INSTR(start_date, {year_extract}), 4) as yr, ' +
-#                 'avg(duration) as avg_trip ' +
-#                 'FROM trip ' +
-#                 'JOIN station ON trip.start_station_id = station.id ' +
-#                 'GROUP BY city, yr'
-#                 )
-
-#     avg_city = pd.read_sql(avg_sql, engine2.connect())
-#     avg_city['avg_trip'] = avg_city['avg_trip']/60
-#     avg_city['avg_trip'] = avg_city['avg_trip'].round()
-#     avg_list = avg_city.to_dict('records')
-
-#     yr_2013 = []
-#     yr_2014 = []
-#     yr_2015 = []
-
-#     for item in avg_list:
-#         data = {}
-#         for k,v in item.items():
-#             if(k=='city'):
-#                 data['axis'] = v
-#             if(k=='avg_trip'):
-#                 data['value'] = v
-#             if(k=='yr'and v=='2013'):
-#                 data['name'] = v
-#                 yr_2013.append(data)
-#             elif(k=='yr'and v=='2014'):
-#                 data['name'] = v
-#                 yr_2014.append(data)
-#             elif(k=='yr'and v=='2015'):
-#                 data['name'] = v
-#                 yr_2015.append(data)
-    
-#     all_yr = [yr_2015, yr_2014, yr_2013]
-
-
-#     return jsonify(all_yr)
-
-# @app.route("/stations")
-# def stations():
-#     """Return a list of sample names."""
-
-#     year_extract = '201'
-#     avg_station_sql = (f'SELECT city, name, substr(start_date, INSTR(start_date, {year_extract}), 4) as yr, ' +
-#                 'avg(duration) as avg_trip ' +
-#                 'FROM trip ' +
-#                 'JOIN station ON trip.start_station_id = station.id ' +
-#                 'GROUP BY city, name, yr'
-#                 )
-
-#     avg_station = pd.read_sql(avg_station_sql, engine2.connect())
-
-#     avg_station['avg_trip'] = avg_station['avg_trip']/60
-#     avg_station['avg_trip'] = avg_station['avg_trip'].round()
-#     avg_station_list = avg_station.to_dict('records')
-
-#     yrs_2013 = []
-#     yrs_2014 = []
-#     yrs_2015 = []
-
-#     for item in avg_station_list:
-#         data = {}
-#         for k,v in item.items():
-#             if(k=='name'):
-#                 data['axis'] = v
-#             if(k=='avg_trip'):
-#                 data['value'] = v
-#             if(k=='city'):
-#                 data['city'] = v
-#             if(k=='yr'and v=='2013'):
-#                 data['name'] = v
-#                 yrs_2013.append(data)
-#             elif(k=='yr'and v=='2014'):
-#                 data['name'] = v
-#                 yrs_2014.append(data)
-#             elif(k=='yr'and v=='2015'):
-#                 data['name'] = v
-#                 yrs_2015.append(data)
-    
-#     all_yr_station = [yrs_2015, yrs_2014, yrs_2013]
-
-
-#     return jsonify(all_yr_station)
-
-
-# @app.route("/bar")
-# def default_station_data():
-
-#      # Query for the top 20 most popular stations in the bay area
-#     top_start_sql = ('SELECT start_station_name, COUNT(start_station_id) as ct FROM trip GROUP BY start_station_name')
-#     top_start = pd.read_sql(top_start_sql, engine.connect())
-#     top_start_20 = top_start.nlargest(20, 'ct')
-
-#     # Create lists from the query results
-#     start_station = top_start_20["start_station_name"].values.tolist()
-#     start_ct = top_start_20["ct"].values.tolist()
-
-    
-#     # end_results = session.query(Trip.end_station_name, func.count(Trip.end_station_id)).group_by(Trip.end_station_name).order_by(func.count(Trip.end_station_id).desc()).limit(20).all()
-
-
-#     # Query for the top 20 most popular stations in the bay area
-#     top_end_sql = ('SELECT end_station_name, COUNT(end_station_id) as ct FROM trip GROUP BY end_station_name')
-#     top_end = pd.read_sql(top_end_sql, engine.connect())
-#     top_end_20 = top_end.nlargest(20, 'ct')
-
-#     # Create lists from the query results
-#     end_station = top_end_20["end_station_name"].values.tolist()
-#     end_ct = top_end_20["ct"].values.tolist()
-    
-#     print(start_station)
-#     print(start_ct)
-#     print("Cephra is amazing!")
-
-#     # Generate the plot trace
-#     trace1 = {
-#         "x": start_station,
-#         "y": start_ct,
-#         "type": "bar"
-#     }
-    
-#     trace2 = {
-#         "x": end_station,
-#         "y": end_ct,
-#         "type": "bar"
-#     }
-    
-#     return jsonify(trace1, trace2)
-
-# @app.route("/city/<city>")
-# def get_city_data(city):
-
-
-#     station_ct_sql =('SELECT city, start_station_name, COUNT(start_station_id) as ct '
-#                  'FROM trip JOIN station on trip.start_station_id = station.id '
-#                  'GROUP BY city, start_station_name')
-
-#     station_ct = pd.read_sql(station_ct_sql, engine.connect())
-
-#     selected_city=city
-#     station_ct_select = station_ct[station_ct["city"]==selected_city].nlargest(10, 'ct')
-
-#     # Create lists from the query results
-#     # station_names = [result[0] for result in results]
-#     # start_station_id = [result[1] for result in results]
-
-#     station_names = station_ct_select["start_station_name"].values.tolist()
-#     start_station_id = station_ct_select["ct"].values.tolist()
-    
-#     # # Generate the plot trace
-#     trace = {
-#         "x": station_names,
-#         "y": start_station_id,
-#         "type": "bar"
-#     }
-
-#     # temp = ['1', '2']
-#     return jsonify(trace)
+@app.route("/index_jessie")
+def map_visual():
+   """Return the homepage."""
+   return render_template("index_jessie.html")
 
 
 @app.route("/2015/<feature>")
