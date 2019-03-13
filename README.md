@@ -18,3 +18,22 @@ https://world-happiness-inc.herokuapp.com/
 
 ![LandingPageBookOpen](images/Project03_LandingPage_Capture_Book_Open.PNG)
 
+
+
+# To Run Project:
+
+- Go to **Flask** folder
+- Run the following in the folder where app.py is located
+```
+export FLASK_DEBUG=1
+export FLASK_ENV=development
+export FLASK_APP=app.py
+flask run
+```
+- Open another terminal window
+- Run the following in the folder where index.html is located
+```
+python -m http.server
+```
+- Visit project at localhost:5000
+**Enjoy!**
