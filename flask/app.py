@@ -22,110 +22,57 @@ app = Flask(__name__)
 #################################################
 
 
-# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/bellybutton.sqlite"
-# db = SQLAlchemy(app)
-
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/World_Happiness_Life_Expectancy_db.sqlite"
 db = SQLAlchemy(app)
 
-# reflect an existing database into a new model
-#Base = automap_base()
-# reflect the tables
-#Base.prepare(db.engine, reflect=True)
 
 engine2 = db.engine
-#connection = engine.connect()
-
-
-#metadata = MetaData()
-#metadata.reflect(bind=db.engine)
-
-# Save references to each table
-# Samples_Metadata = Base.classes.sample_metadata
-# Samples = Base.classes.samples
-# # The database URI
-# engine = create_engine("sqlite:///db/World_Happiness_Life_Expectancy_db.sqlite")
-
-# # reflect an existing database into a new model
-# Base = automap_base()
-# # reflect the tables
-# Base.prepare(engine, reflect=True)
-
-# Save reference to the table
-# Trip = Base.classes.trip
-# Station = Base.classes.station
-
-# # Create our session (link) from Python to the DB
-# session = Session(engine)
 
 
 
 @app.route("/")
 def index():
     """Return the homepage."""
-    
-    # dist_city_sql = (f'SELECT DISTINCT city FROM station ')
-    # dist_city = pd.read_sql(dist_city_sql, engine2.connect())
-    # dist_city_list = dist_city["city"].values.tolist()
-    dist_city_list = 'hello'
-    # results = session.query(Station.city).distinct()
-    # cities = [result[0] for result in results]
 
     return render_template("index.html")
+
+
 
 @app.route("/visualization")
 def index2():
     """Visualization Page."""
-    
-    # dist_city_sql = (f'SELECT DISTINCT city FROM station ')
-    # dist_city = pd.read_sql(dist_city_sql, engine2.connect())
-    # dist_city_list = dist_city["city"].values.tolist()
-    dist_city_list = 'hello'
-    # results = session.query(Station.city).distinct()
-    # cities = [result[0] for result in results]
 
     return render_template("index2.html")
 
+@app.route("/flaskcode")
+def flaskcode():
+    """Visualization Page."""
+
+    return render_template("app.html")
 
 @app.route("/pandas")
 def index_pandas():
     """Data Cleaning and Wrangling Page."""
-    
-    # dist_city_sql = (f'SELECT DISTINCT city FROM station ')
-    # dist_city = pd.read_sql(dist_city_sql, engine2.connect())
-    # dist_city_list = dist_city["city"].values.tolist()
-    dist_city_list = 'hello'
-    # results = session.query(Station.city).distinct()
-    # cities = [result[0] for result in results]
 
     return render_template("Import-export-clean-data.html")
+
 
 
 @app.route("/httpcats")
 def index_HttpCats():
     """Http Cats Page."""
     
-    # dist_city_sql = (f'SELECT DISTINCT city FROM station ')
-    # dist_city = pd.read_sql(dist_city_sql, engine2.connect())
-    # dist_city_list = dist_city["city"].values.tolist()
-    dist_city_list = 'hello'
-    # results = session.query(Station.city).distinct()
-    # cities = [result[0] for result in results]
-
     return render_template("cats_index.html")
+
+
 
 @app.route("/sandy_graph")
 def index_sandyGraph():
     """Http Sandy's Graph Page."""
     
-    # dist_city_sql = (f'SELECT DISTINCT city FROM station ')
-    # dist_city = pd.read_sql(dist_city_sql, engine2.connect())
-    # dist_city_list = dist_city["city"].values.tolist()
-    # dist_city_list = 'hello'
-    # results = session.query(Station.city).distinct()
-    # cities = [result[0] for result in results]
-
     return render_template("graph.html")
+
+
 
 @app.route("/index_jessie")
 def map_visual():
@@ -133,56 +80,9 @@ def map_visual():
    return render_template("index_jessie.html")
 
 
-@app.route("/2015/<feature>")
-def end_station_data(feature):
-    # Query for the top 10 most popular stations
-    # results = session.query(Trip.end_station_name, func.count(Trip.end_station_id)).group_by(Trip.end_station_name).order_by(func.count(Trip.end_station_id).desc()).limit(20).all()
-    
-    # # Create lists from the query results
-    # station_names = [result[0] for result in results]
-    # end_station_id = [result[1] for result in results]
-    
-    # Query for the top 10 most popular stations
-    selected_feature = feature
-
-    if selected_feature == 'freedom':
-        selected_feature = 'Freedom_2015'
-    elif selected_feature == 'gdp':
-        selected_feature = 'GDP_per_Capita_2015'
-    
-
-    # 'Region':'Region_2015',
-    # 'Happiness Rank':'Happiness_Rank_2015',
-    # 'Happiness Score':'Happiness_Score_2015',
-    # 'Standard Error':'Standard_Error_2015',
-    # 'Economy (GDP per Capita)':'GDP_per_Capita_2015',
-    # 'Family':'Family_2015',
-    # 'Health (Life Expectancy)':'Health_2015','Freedom':'Freedom_2015','Trust (Government Corruption)':'Government_Trust_2015','Generosity':'Generosity_2015','Dystopia Residual':'Dystopia_Residual_2015'
-
-    happiness_2015_feature_sql =(f'SELECT Happiness_Score_2015, {selected_feature} '
-                 'FROM World_Happiness_Report_2015_2016_2017_tb')
-
-    happiness_2015_feature_df = pd.read_sql(happiness_2015_feature_sql, engine2.connect())
-
-    # selected_city = city
-    # station_end_ct_select = station_end_ct[station_end_ct["city"]==selected_city].nlargest(10, 'ct')
-
-    happiness_2015_x = happiness_2015_feature_df["Happiness_Score_2015"].values.tolist()
-    happiness_2015_y = happiness_2015_feature_df[selected_feature].values.tolist()
-    
-    # Generate the plot trace
-    trace = {
-        "x": happiness_2015_x,
-        "y": happiness_2015_y,
-        "type": "bar"
-    }
-    return jsonify(trace)
 
 @app.route("/region/happiness")
 def happiness_region():
-
-
-
 
     #select query
 
@@ -193,7 +93,7 @@ def happiness_region():
                                ' JOIN weekly_hours_avg_worked_job_df_2015_2017_tb hw ON hl.country = hw.country '
                               'GROUP BY region_2015')
 
-    
+
     #read query into dataframe
     avg_happiness_region_df = pd.read_sql(avg_happiness_region_select, engine2.connect())
 
@@ -214,6 +114,8 @@ def happiness_region():
 
     #return as json object
     return jsonify(happiness)
+
+
 
 @app.route("/barplot/<feature>")
 def graph_barplot(feature):
@@ -253,9 +155,6 @@ def graph_barplot(feature):
     return jsonify(happiness_region_dict)
     
     
-
-
-
 
 
 if __name__ == "__main__":
