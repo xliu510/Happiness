@@ -1,6 +1,6 @@
 # Project Happiness
 
-#### Heroku App  
+## Heroku App  
 https://world-happiness-inc.herokuapp.com/
 ------
 
