@@ -44,6 +44,12 @@ def index2():
 
     return render_template("index2.html")
 
+@app.route("/tensorflow")
+def tensorflow():
+    """Image Classification Page."""
+
+    return render_template("image_test.html")
+
 
 @app.route("/flaskcode")
 def flaskcode():
