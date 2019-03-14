@@ -11,7 +11,7 @@ from sqlalchemy import inspect
 from sqlalchemy import MetaData
 from sqlalchemy import Table
 
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -56,7 +56,7 @@ def flaskcode():
 def index_pandas():
     """Data Cleaning and Wrangling Page."""
 
-    return render_template("Import-export-clean-data.html")
+    return redirect("https://xliu510.github.io/Happiness_JN/")
 
 
 
