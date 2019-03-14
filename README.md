@@ -1,8 +1,5 @@
 # Project Happiness
 
-### Heroku App  
-https://world-happiness-inc.herokuapp.com/
-
 ## Project Description  
 1) Find factors that is related to happiness.  
 2) Make interactive dashboard.  
@@ -11,6 +8,9 @@ https://world-happiness-inc.herokuapp.com/
 5) Use Machine Learning to Classify Happiness through Images.
 
 <hr>
+
+### Heroku App  
+https://world-happiness-inc.herokuapp.com/
 
 ### How to run app
 
