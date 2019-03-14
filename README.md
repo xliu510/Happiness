@@ -31,9 +31,7 @@ https://world-happiness-inc.herokuapp.com/
 <hr>
 
 ### Visualization Page  
-<div style="text-align:center" markdown="1">
 ![VisualizationPage](images/02_visualization_page.png)
-<div>
 <hr>
 
 ### JupyterNotebook Page  
