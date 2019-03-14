@@ -12,6 +12,8 @@
 ### Heroku App  
 https://world-happiness-inc.herokuapp.com/
 
+<hr>
+
 ### How to run file
 
 #### With Flask
