@@ -12,17 +12,17 @@
 ### Heroku App  
 https://world-happiness-inc.herokuapp.com/
 
-### How to run app
-
-#### With Jupyter Notebook
-1) open Import-export-clean-data.ipnyb in Jupyter notebook and run  
-1) cd flask  
-1) ./run.sh  
+### How to run file
 
 #### With Flask
 1) git clone https://github.com/xliu510/Happiness.git
 1) run app.py flask app
 1) open browser and use the app generated http://127.0.0.1:5000/ link
+
+#### With Jupyter Notebook
+1) open Import-export-clean-data.ipnyb in Jupyter notebook and run  
+1) cd flask  
+1) ./run.sh  
 
 <hr>
 
