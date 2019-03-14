@@ -1,6 +1,6 @@
 # Project Happiness
 
-## Project Description  
+## Description  
 1) Find factors that is related to happiness.  
 2) Make interactive dashboard.  
 3) Apply multivariable linear regression to model the relationships between the datasets and make happiness predictions.  
