@@ -10,10 +10,17 @@ https://world-happiness-inc.herokuapp.com/
 4) Utilize training & testing technique for model fitting.
 5) Use Machine Learning to Classify Happiness through Images.
 
-### How to run  
-open Import-export-clean-data.ipnyb in Jupyter notebook and run  
-cd flask  
-./run.sh  
+### How to run
+
+#### Method 01
+1) open Import-export-clean-data.ipnyb in Jupyter notebook and run  
+1) cd flask  
+1) ./run.sh  
+
+#### Method 02
+1) git clone https://github.com/xliu510/Happiness.git
+1) run app.py flask app
+1) open browser and use the generated http://127.0.0.1:5000/ link
 
 ### Landing Page  
 
