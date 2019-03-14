@@ -22,6 +22,8 @@ https://world-happiness-inc.herokuapp.com/
 1) run app.py flask app
 1) open browser and use the app generated http://127.0.0.1:5000/ link
 
+<hr>
+
 ### Landing Page  
 
 ![LandingPageBookClosed](images/01_landing_page.png)
