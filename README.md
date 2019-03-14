@@ -28,21 +28,31 @@ https://world-happiness-inc.herokuapp.com/
 
 ![LandingPageBookClosed](images/01_landing_page.png)
 
+<hr>
+
 ### Visualization Page  
 
 ![VisualizationPage](images/02_visualization_page.png)
+
+<hr>
 
 ### JupyterNotebook Page  
 
 ![JupyterNotebookPage](images/03_jupyter_notebook_page.png)
 
+<hr>
+
 ### Radial Plot Page  
 
 ![RadialPlotPage](images/04_radial_plot_page.png)
 
+<hr>
+
 ### Bubble Plot Page  
 
 ![BubblePlotPage](images/05_bubble_plot_page.png)
+
+<hr>
 
 ### Map Page 
 
