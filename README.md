@@ -10,6 +10,8 @@ https://world-happiness-inc.herokuapp.com/
 4) Utilize training & testing technique for model fitting.
 5) Use Machine Learning to Classify Happiness through Images.
 
+<hr>
+
 ### How to run app
 
 #### With Jupyter Notebook
