@@ -67,6 +67,12 @@ def index_HttpCats():
     return redirect("https://xliu510.github.io/Happiness/cats_index.html")
 
 
+@app.route("/tableau")
+def tableau_link():
+    """Tableau Page."""
+    
+    return redirect("https://public.tableau.com/profile/xing7154#!/vizhome/Happiness_15525426932400/2015RIdershipBreakdown?publish=yes")
+
 
 @app.route("/sandy_graph")
 def index_sandyGraph():
