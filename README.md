@@ -1,7 +1,9 @@
 # Project Happiness  
 
 #### Heroku App  
-https://world-happiness-inc.herokuapp.com/  
+https://world-happiness-inc.herokuapp.com/
+
+<hr>
 
 ## Project Description  
 1) Find factors that is related to happiness.  
