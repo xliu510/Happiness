@@ -71,7 +71,7 @@ def index_HttpCats():
 def tableau_link():
     """Tableau Page."""
     
-    return redirect("https://public.tableau.com/profile/xing7154#!/vizhome/Happiness_15525426932400/2015RIdershipBreakdown?publish=yes")
+    return redirect("https://public.tableau.com/profile/xing7154#!/vizhome/Happiness_15525426932400/CountryMap")
 
 
 @app.route("/sandy_graph")
