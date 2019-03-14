@@ -64,7 +64,7 @@ def index_pandas():
 def index_HttpCats():
     """Http Cats Page."""
     
-    return render_template("cats_index.html")
+    return redirect("https://xliu510.github.io/Happiness/cats_index.html")
 
 
 
