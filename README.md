@@ -1,8 +1,5 @@
 # Project Happiness  
 
-#### Github Page  
-https://xliu510.github.io/Happiness/index.html  
-
 #### Heroku App  
 https://world-happiness-inc.herokuapp.com/  
 
