@@ -44,11 +44,13 @@ def index2():
 
     return render_template("index2.html")
 
+
 @app.route("/flaskcode")
 def flaskcode():
     """Visualization Page."""
 
     return render_template("app.html")
+
 
 @app.route("/pandas")
 def index_pandas():
@@ -76,10 +78,24 @@ def index_sandyGraph():
 
 @app.route("/index_jessie")
 def map_visual():
-   """Return the homepage."""
+   """Bubble Plot"""
    return render_template("index_jessie.html")
 
 
+@app.route("/happiness_score")
+def map_score():
+   """Happiness Score Map"""
+   return render_template("plot_happiness_score.html")
+
+@app.route("/happiness_rank")
+def map_rank():
+   """Happiness Rank Map"""
+   return render_template("plot_happiness_rank.html")
+
+@app.route("/happiness_kmeans")
+def map_kmeans():
+   """Happiness Kmeans Map"""
+   return render_template("plot_happiness_kmeans_clustering.html")
 
 @app.route("/region/happiness")
 def happiness_region():
